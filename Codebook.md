@@ -1,5 +1,5 @@
 #Getting and Cleaning Data - Course Project
-###Codebook
+##Codebook
 
 ###Activity labels:
 - WALKING
