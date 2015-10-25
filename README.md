@@ -32,4 +32,5 @@ run_analysis.R: Contains all the code to perform the analysis described in the f
 - Label the data set with descriptive variable names (by replacing t with Time, f with Frequency, mean() with Mean, std() with StandardDeviation, BodyBody with Body, -X with _X, etc.)
 - Merge all datasets together
 - Create a tidy data set with the average of each variable for each activity and each subject
+- ddply() from the plyr package is used to calculate colMeans()
 - Write the tidyData.txt in the current working directory
