@@ -1,36 +1,79 @@
 #Getting and Cleaning Data - Course Project
-
-This repository hosts the following files.
-
-###Files
-
-CodeBook.md:  Describes input/output variables and transformation steps performed to get tidy dataset.
-
-run_analysis.R: Contains all the code to perform the analysis described in the following steps. 
-
-- Merges the training and the test sets to create one data set.
-- Extracts only the measurements on the mean and standard deviation for each measurement. 
--	Uses descriptive activity names to name the activities in the data set
--	Appropriately labels the data set with descriptive variable names. 
--	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-###Running run_analysis.R
-- Create a directory and copy R script to this directory
-- Download datafile (Human Activity Recognition Using Smartphones Data Set) and unzip into a new ‘data’ directory
-- Run the  R ‘run_analysis.R’ script which would create ‘tidyData.txt file in the current working directory. 
-
-###Transformation performed by the R script
-
-- create data directory if it doesn't exist, download data from the URL and unzip the data
-- Read data from TEST directory
-- Read data from TRAIN folder
-- Merging Test and Train data
-- Read features dataset
-- Rename Merged Dataset headers using features data
-- Filter only columns that contain "Mean" and Standard Deviation "Std"
-- Read activities data and update values with activity names
-- Label the data set with descriptive variable names (by replacing t with Time, f with Frequency, mean() with Mean, std() with StandardDeviation, BodyBody with Body, -X with _X, etc.)
-- Merge all datasets together
-- Create a tidy data set with the average of each variable for each activity and each subject
+###Codebook
 
 
+- jkljl
+- jjlk
+- 
+
+````
+*	VARIABLE_NAME								         UNITS
+*	Subject                                  	Integer    [1..30]
+*	Activity                                 	Integer    [1..6]
+*	Time_BodyAcc_MeanValue_X                  	  Hz   [0-50]
+*	Time_BodyAcc_MeanValue_Z                  	  Hz   [0-50]
+*	Time_BodyAcc_StandardDeviation_Y          	  Hz   [0-50]
+*	Time_GravityAcc_MeanValue_X               	  Hz   [0-50]
+*	Time_GravityAcc_MeanValue_Z               	  Hz   [0-50]
+*	Time_GravityAcc_StandardDeviation_Y       	  Hz   [0-50]
+*	Time_BodyAccJerk_MeanValue_X              	  Hz   [0-50]
+*	Time_BodyAccJerk_MeanValue_Z              	  Hz   [0-50]
+*	Time_BodyAccJerk_StandardDeviation_Y      	  Hz   [0-50]
+*	Time_BodyGyro_MeanValue_X                 	  Hz   [0-50]
+*	Time_BodyGyro_MeanValue_Z                 	  Hz   [0-50]
+*	Time_BodyGyro_StandardDeviation_Y         	  Hz   [0-50]
+*	Time_BodyGyroJerk_MeanValue_X             	  Hz   [0-50]
+*	Time_BodyGyroJerk_MeanValue_Z             	  Hz   [0-50]
+*	Time_BodyGyroJerk_StandardDeviation_Y     	  Hz   [0-50]
+*	Time_BodyAccMag_MeanValue                 	  Hz   [0-50]
+*	Time_GravityAccMag_MeanValue              	  Hz   [0-50]
+*	Time_BodyAccJerkMag_MeanValue             	  Hz   [0-50]
+*	Time_BodyGyroMag_MeanValue                	  Hz   [0-50]
+*	Time_BodyGyroJerkMag_MeanValue            	  Hz   [0-50]
+*	Frequency_BodyAcc_MeanValue_X                 Hz   [0-50]
+*	Frequency_BodyAcc_MeanValue_Z                 Hz   [0-50]
+*	Frequency_BodyAcc_StandardDeviation_Y         Hz   [0-50]
+*	Frequency_BodyAccJerk_MeanValue_X             Hz   [0-50]
+*	Frequency_BodyAccJerk_MeanValue_Z             Hz   [0-50]
+*	Frequency_BodyAccJerk_StandardDeviation_Y     Hz   [0-50]
+*	Frequency_BodyGyro_MeanValue_X                Hz   [0-50]
+*	Frequency_BodyGyro_MeanValue_Z                Hz   [0-50]
+*	Frequency_BodyGyro_StandardDeviation_Y        Hz   [0-50]
+*	Frequency_BodyAccMag_MeanValue                Hz   [0-50]
+*	Frequency_BodyAccJerkMag_MeanValue          	Hz   [0-50]
+*	Frequency_BodyGyroMag_MeanValue             	Hz   [0-50]
+*	Frequency_BodyGyroJerkMag_MeanValue       	  Hz   [0-50]
+*	Time_BodyAcc_MeanValue_Y                   	  Hz   [0-50]
+*	Time_BodyAcc_StandardDeviation_X         	    Hz   [0-50]
+*	Time_BodyAcc_StandardDeviation_Z         	    Hz   [0-50]
+*	Time_GravityAcc_MeanValue_Y              	    Hz   [0-50]
+*	Time_GravityAcc_StandardDeviation_X      	    Hz   [0-50]
+*	Time_GravityAcc_StandardDeviation_Z      	    Hz   [0-50]
+*	Time_BodyAccJerk_MeanValue_Y             	    Hz   [0-50]
+*	Time_BodyAccJerk_StandardDeviation_X     	    Hz   [0-50]
+*	Time_BodyAccJerk_StandardDeviation_Z     	    Hz   [0-50]
+*	Time_BodyGyro_MeanValue_Y                	    Hz   [0-50]
+*	Time_BodyGyro_StandardDeviation_X        	    Hz   [0-50]
+*	Time_BodyGyro_StandardDeviation_Z        	    Hz   [0-50]
+*	Time_BodyGyroJerk_MeanValue_Y            	    Hz   [0-50]
+*	Time_BodyGyroJerk_StandardDeviation_X    	    Hz   [0-50]
+*	Time_BodyGyroJerk_StandardDeviation_Z    	    Hz   [0-50]
+*	Time_BodyAccMag_StandardDeviation        	    Hz   [0-50]
+*	Time_GravityAccMag_StandardDeviation     	    Hz   [0-50]
+*	Time_BodyAccJerkMag_StandardDeviation    	    Hz   [0-50]
+*	Time_BodyGyroMag_StandardDeviation       	    Hz   [0-50]
+*	Time_BodyGyroJerkMag_StandardDeviation   	    Hz   [0-50]
+*	Frequency_BodyAcc_MeanValue_Y                 Hz   [0-50]
+*	Frequency_BodyAcc_StandardDeviation_X         Hz   [0-50]
+*	Frequency_BodyAcc_StandardDeviation_Z         Hz   [0-50]
+*	Frequency_BodyAccJerk_MeanValue_Y             Hz   [0-50]
+*	Frequency_BodyAccJerk_StandardDeviation_X     Hz   [0-50]
+*	Frequency_BodyAccJerk_StandardDeviation_Z     Hz   [0-50]
+*	Frequency_BodyGyro_MeanValue_Y                Hz   [0-50]
+*	Frequency_BodyGyro_StandardDeviation_X        Hz   [0-50]
+*	Frequency_BodyGyro_StandardDeviation_Z        Hz   [0-50]
+*	Frequency_BodyAccMag_StandardDeviation        Hz   [0-50]
+*	Frequency_BodyAccJerkMag_StandardDeviation 	  Hz   [0-50]
+*	Frequency_BodyGyroMag_StandardDeviation    	  Hz   [0-50]
+*	Frequency_BodyGyroJerkMag_StandardDeviation	  Hz   [0-50]
+````
