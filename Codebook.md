@@ -1,12 +1,17 @@
 #Getting and Cleaning Data - Course Project
 ###Codebook
 
+###Activity labels:
+- WALKING
+- WALKING_UPSTAIRS
+- WALKING_DOWNSTAIRS
+- SITTING
+- STANDING
+- LAYING
 
-- jkljl
-- jjlk
-- 
+###Output Variables
 
-````
+```
 VARIABLE_NAME	-	UNITS
 Subject - Integer    [1..30]
 Activity - Integer    [1..6]
@@ -75,4 +80,4 @@ Frequency_BodyAccJerkMag_StandardDeviation - Hz   [0-50]
 Frequency_BodyGyroMag_Mean - Hz   [0-50]
 Frequency_BodyGyroMag_StandardDeviation - Hz   [0-50]
 Frequency_BodyGyroJerkMag_Mean - Hz [0-50]
-````
+```
